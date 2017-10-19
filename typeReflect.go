@@ -1,11 +1,12 @@
 package tool
 
 import (
+	"log"
 	"reflect"
 	"time"
 )
 
-func CheckZero(v reflect.Value) (isValid bool) {
+func IsZero(v reflect.Value) (isValid bool) {
 
 	if !v.CanInterface() {
 		return false
@@ -34,12 +35,13 @@ func CheckZero(v reflect.Value) (isValid bool) {
 		}
 	case reflect.Struct:
 		if _v, ok := value.(time.Time); ok {
-			if !_v.IsZero() {
+			if _v.IsZero() {
 				isValid = true
 			}
 		}
 	default:
 		isValid = false
 	}
+	log.Print(isValid)
 	return isValid
 }
