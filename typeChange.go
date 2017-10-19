@@ -16,3 +16,7 @@ func STF64(s string) (f float64, err error) {
 	f, err = strconv.ParseFloat(s, 64)
 	return
 }
+
+func ByteToValue(b [][]byte, result interface{}) {
+
+}
