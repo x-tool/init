@@ -1,7 +1,6 @@
 package tool
 
 import (
-	"log"
 	"reflect"
 	"time"
 )
@@ -42,6 +41,5 @@ func IsZero(v reflect.Value) (isValid bool) {
 	default:
 		isValid = false
 	}
-	log.Print(isValid)
 	return isValid
 }
