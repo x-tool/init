@@ -7,9 +7,13 @@ import (
 	"os"
 )
 
-func ReadConfigFromFile(model interface{}) (error) {
+func ReadConfigFromFile(fileName string, model interface{}) (error) {
+	var _fileName string
+	if fileName == nil{
+		_fileName = "config.json"
+	}
 	// Open config file
-	file, err := os.Open("config.json")
+	file, err := os.Open(_fileName)
 	defer file.Close()
 	if err != nil {
 		log.Fatal(err)
