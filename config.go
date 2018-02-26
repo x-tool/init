@@ -7,9 +7,9 @@ import (
 	"os"
 )
 
-func ReadConfigFromFile(fileName string, model interface{}) (error) {
+func ReadConfigFromFile(fileName string, model interface{}) error {
 	var _fileName string
-	if fileName == nil{
+	if fileName == "" {
 		_fileName = "config.json"
 	}
 	// Open config file
