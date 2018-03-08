@@ -5,7 +5,7 @@ import "bytes"
 func JoinStringWithComma(lst []string) string {
 	var buf bytes.Buffer
 	for i, v := range lst {
-		if i == 1 {
+		if i == 0 {
 			buf.WriteString(v)
 		} else {
 			buf.WriteString(",")
@@ -18,11 +18,10 @@ func JoinStringWithComma(lst []string) string {
 func JoinStringWithCommaEnter(lst []string) string {
 	var buf bytes.Buffer
 	for i, v := range lst {
-		if i == 1 {
+		if i == 0 {
 			buf.WriteString(v)
 		} else {
-			buf.WriteString(",")
-			buf.WriteString("\n")
+			buf.WriteString(",\n")
 			buf.WriteString(v)
 		}
 	}
