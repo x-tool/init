@@ -7,10 +7,9 @@ func GetFullName(typ reflect.Type) string {
 }
 
 // get real reflect.Value from raw, across ptr
-func GetRealReflectValue(raw *reflect.Value) *reflect.Value {
+func GetRealReflectValue(raw reflect.Value) *reflect.Value {
 	if raw.Kind() == reflect.Ptr || raw.Kind() == reflect.Interface {
-		_raw := raw.Elem()
-		raw = &_raw
+		raw = raw.Elem()
 	}
-	return raw
+	return &raw
 }
