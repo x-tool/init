@@ -36,6 +36,9 @@ func JoinStringWithCommaEnter(lst []string) string {
 
 func ReflectValueToString(value *reflect.Value) (s string) {
 	_value := *value
+	if value.Kind() == reflect.Invalid {
+		return ""
+	}
 	valueType := _value.Type()
 	switch valueType.Kind() {
 	case reflect.Bool:
